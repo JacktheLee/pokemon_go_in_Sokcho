@@ -1,0 +1,6 @@
+<%= @pokemon.name %>
+<%= @pokemon.intro %>
+<%= @pokemon.img %>
+<%= link_to "수정하기", edit_pokemon_path(@pokemon) %>
+<%= link_to "삭제하기", pokemon_path(@pokemon), method: :delete %>
+<%= link_to "전체포켓몬", pokemons_path %>

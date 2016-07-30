@@ -1,0 +1,31 @@
+<% @index = 0 %>
+<table class="centered cyan lighten-4">
+  <thead>
+    <tr>
+      <th></th>
+      <th>포켓몬</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% Pokemon.all.each do |p| %>
+      <% if @index%3 == 0  %>
+        <tr>
+        <% end %>
+        <td onclick="pokemon_init(<%= p.lat %>,<%= p.lng %>,'<%= p.img %>');">
+          <%= link_to pokemon_path(p) do %>
+            <%= p.name %>
+          <% end %>
+          <div class="col s2">
+            <%= image_tag p.img , class: "pokemon_img"%>
+          </div>
+          <% if current_page?(action: 'index',controller: 'pokemons') %>
+            <%= p.intro  %>
+          <% end %>
+        </td>
+        <% if @index%3 == 2 %>
+        </tr>
+      <% end %>
+      <% @index+=1 %>
+    <% end %>
+  </tbody>
+</table>

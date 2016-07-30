@@ -1,0 +1,4 @@
+<h3>지우야 이번엔 무슨 포캣몬이니</h3>
+<%= form_for @pokemon, multipart: true do |f| %>
+  <%= render partial: 'form_input', locals: { :f => f } %>
+<% end %>

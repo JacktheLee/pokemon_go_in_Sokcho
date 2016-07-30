@@ -1,0 +1,37 @@
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+<%= f.label :intro %>
+<%= f.text_field :intro %>
+<br>
+<div class="row">
+  <div class="input-field col s6">
+    <%= f.label :lat %>
+    <%= f.text_field :lat, class: "validate" %>
+  </div>
+  <div class="input-field col s6">
+    <%= f.label :lng %>
+    <%= f.text_field :lng, class: "validate" %>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="input-field col s12">
+    <%= f.label :cp %>
+    <%= f.text_field :cp, class: "validate" %>
+  </div>
+</div>
+<br>
+<div class="file-field input-field">
+  <div class="btn">
+    <span>img</span>
+    <%= f.file_field :img %>
+  </div>
+  <br>
+  <div class="file-path-wrapper">
+    <%= f.text_field :img, class: "file-path validate" %>
+  </div>
+</div>
+<div class="center-align">
+  <%= f.submit class: "btn waves-effect waves-light"%>
+</div>

@@ -1,0 +1,37 @@
+<html>
+<!DOCTYPE html>
+  <head>
+    <title>PokemonGo</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo"><%= image_tag asset_path('logo.png'), class: "logo" %></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="<%= pokemons_path%>">포켓몬 도감</a></li>
+        <li><a href="<%= new_pokemon_path%>">포켓몬 등록</a></li>
+        <li><a href="#">후원하기</a></li>
+      </ul>
+    </div>
+    </nav>
+
+    <main role="main">
+    <div class="container">
+      <%= yield %>
+    </div>
+    </main>
+
+    <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        © 2016 google map 실습
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+module PokemonMapHelper
+end

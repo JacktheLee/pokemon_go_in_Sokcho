@@ -1,0 +1,28 @@
+<h1 class="pokemon">속초 마을 포켓몬 출몰 지도</h1>
+<div id="map">
+</div>
+<table>
+  <thead>
+    <tr>
+      <th data-field="id">Name</th>
+      <th><p onclick='initialize();'> 초기화</p></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @index = 0 %>
+    <% Pokemon.all.each do |p| %>
+      <% if @index%3 == 0  %>
+        <tr>
+        <% end %>
+        <td onclick="pokemon_init(<%= p.lat %>,<%= p.lng %>,'<%= p.img %>');">
+          <%= p.name %>
+        </td>
+        <% if @index%3 == 2 %>
+        </tr>
+      <% end %>
+      <% @index+=1 %>
+    <% end %>
+  </tbody>
+</table>
+<%= render partial: 'pokemon_list'%>
