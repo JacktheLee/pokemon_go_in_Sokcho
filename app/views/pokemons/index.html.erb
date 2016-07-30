@@ -1,2 +1,8 @@
 <%= link_to "새로운 포켓몬", new_pokemon_path %>
 <%= render partial: '/pokemon_map/pokemon_list' %>
+<script>
+  $(document).ready(function(){
+    $('.tabs-wrapper .row').pushpin({ top: $('.tabs-wrapper').offset().top });
+  });
+
+</script>

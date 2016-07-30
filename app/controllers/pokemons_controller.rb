@@ -31,6 +31,7 @@ class PokemonsController < ApplicationController
     @pokemon.destroy
     redirect_to pokemons_path
   end
+
   private
 
   def pokemon_params
